@@ -14,6 +14,10 @@
 task main(){
 	while(true){
 		drive();
+		liftShoulder()
+		liftElbows()
+		liftClaw()
+		liftGoal()
 	}
 }
 
@@ -34,3 +38,39 @@ void liftShoulder(){
 		motor[shoulderL] = 0;
 	}
 }
+
+void liftElbows() {
+	if (vexRT[Btn8D] == 1) {
+		motor[elbowR] = 40;
+		motor[elbowL] = 40;
+	} else if (vexRT[Btn7L] == 1]){
+		motor[elbowR] = -40;
+		motor[elbowL] = -40;
+	} else{
+		motor[elbowR] = 0;
+		motor[elbowL] = 0;
+	}
+}
+
+void liftClaw() {
+	if (vexRT[Btn7U] == 1) {
+		motor[claw] = 40;
+	} else if (vexRT[BTN7R] == 1) {
+		motor[claw] = -40;
+	} else {
+		motor[claw] = 0;
+}
+
+void liftGoal() {
+	if (vexRT[Btn8U] == 1) {
+		motor[liftR] = 40;
+		motor[liftL] = 40;
+	} else if (vexRT[Btn8R] == 1]){
+		motor[liftR] = -40;
+		motor[liftL] = -40;
+	} else{
+		motor[liftR] = 0;
+		motor[liftL] = 0;
+	}
+}
+
